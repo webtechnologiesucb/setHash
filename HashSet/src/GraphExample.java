@@ -1,29 +1,29 @@
 import java.util.*;
 
-class Graph {
+class Grafo {
     private int V; // Número de vértices
-    private Map<Integer, List<Integer>> adjList;
+    private Map<Integer, List<Integer>> listaAdyacencia;
 
-    public Graph(int v) {
+    public Grafo(int v) {
         V = v;
-        adjList = new HashMap<>();
+        listaAdyacencia = new HashMap<>();
         for (int i = 0; i < V; i++) {
-            adjList.put(i, new ArrayList<>());
+            listaAdyacencia.put(i, new ArrayList<>());
         }
     }
 
     // Agregar una arista al grafo
-    public void addEdge(int v, int w) {
-        adjList.get(v).add(w);
-        adjList.get(w).add(v); // Ya que es un grafo no dirigido
+    public void agregarVertice(int v, int w) {
+        listaAdyacencia.get(v).add(w);
+        listaAdyacencia.get(w).add(v); // Ya que es un grafo no dirigido
     }
 
     // Imprimir el grafo
-    public void printGraph() {
+    public void imprimirGrafo() {
         for (int v = 0; v < V; v++) {
             System.out.print("Vértice " + v + " está conectado a: ");
-            for (Integer neighbor : adjList.get(v)) {
-                System.out.print(neighbor + " ");
+            for (Integer vecino : listaAdyacencia.get(v)) {
+                System.out.print(vecino + " ");
             }
             System.out.println();
         }
@@ -33,16 +33,16 @@ class Graph {
 public class GraphExample {
     public static void main(String[] args) {
         int V = 5; // Número de vértices en el grafo
-        Graph graph = new Graph(V);
+        Grafo grafo = new Grafo(V);
 
         // Agregar aristas al grafo
-        graph.addEdge(0, 1);
-        graph.addEdge(0, 2);
-        graph.addEdge(1, 2);
-        graph.addEdge(1, 3);
-        graph.addEdge(2, 4);
+        grafo.agregarVertice(0, 1);
+        grafo.agregarVertice(0, 2);
+        grafo.agregarVertice(1, 2);
+        grafo.agregarVertice(1, 3);
+        grafo.agregarVertice(2, 4);
 
         // Imprimir el grafo
-        graph.printGraph();
+        grafo.imprimirGrafo();
     }
 }
