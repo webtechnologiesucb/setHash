@@ -5,33 +5,33 @@ import java.util.Set;
 public class HashSetExample {
     public static void main(String[] args) {
         // Crear una instancia de HashSet
-        Set<String> hashSet = new HashSet<>();
+        Set<String> frutasHash = new HashSet<>();
 
         // Agregar elementos al HashSet
-        hashSet.add("Manzana");
-        hashSet.add("Banana");
-        hashSet.add("Cereza");
-        hashSet.add("Durazno");
+        frutasHash.add("Manzana");
+        frutasHash.add("Banana");
+        frutasHash.add("Cereza");
+        frutasHash.add("Durazno");
 
         // Mostrar los elementos del HashSet
-        System.out.println("Elementos en el HashSet: " + hashSet);
+        System.out.println("Elementos en el HashSet: " + frutasHash);
 
         // Verificar si un elemento existe en el HashSet
-        boolean contieneBanana = hashSet.contains("Banana");
+        boolean contieneBanana = frutasHash.contains("Banana");
         System.out.println("¿El HashSet contiene Banana? " + contieneBanana);
 
         // Eliminar un elemento del HashSet
-        hashSet.remove("Cereza");
+        frutasHash.remove("Cereza");
 
         // Iterar a través de los elementos del HashSet usando un Iterator
-        Iterator<String> iterator = hashSet.iterator();
-        while (iterator.hasNext()) {
-            String fruta = iterator.next();
+        Iterator<String> recorrido = frutasHash.iterator();
+        while (recorrido.hasNext()) {
+            String fruta = recorrido.next();
             System.out.println(fruta);
         }
 
         // Tamaño del HashSet
-        int tamano = hashSet.size();
+        int tamano = frutasHash.size();
         System.out.println("Tamaño del HashSet: " + tamano);
     }
 }
